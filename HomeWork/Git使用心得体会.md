@@ -197,7 +197,24 @@
 
   `git commit -m "add HomeWork/Git使用心得体会.md"`
 
+* 版本控制初步：
 
+  - 假设有一个文件"git.md"，对它做了四次修改，第i次版本，会将里面内容改成"version i"，每次都对其提交。
+
+    ![D00641A7-5923-486F-B8B0-38D308975EC1](/Users/huth/Documents/Study/USTC/软件工程/HomeWork/D00641A7-5923-486F-B8B0-38D308975EC1.png)![B8E018F9-796C-4FB1-BDC0-93BED3790C85](/Users/huth/Documents/Study/USTC/软件工程/HomeWork/B8E018F9-796C-4FB1-BDC0-93BED3790C85.png)
+
+    用`git log`指令可查看提交记录：
+
+  ![A1E33331-8A73-43B9-B255-B09B3CA12705](/Users/huth/Documents/Study/USTC/软件工程/HomeWork/A1E33331-8A73-43B9-B255-B09B3CA12705.png)
+
+  ​	现在欲将其恢复到版本2，则使用命令：`git reset --hard HEAD^^` 其中HEAD指向当前分支最新提交的一个版本，一个^代表回退一个版本，两个^即可回退到version 2。该指令有多种切换方法：
+
+  `git reset —hard HEAD^^/HEAD~100/commit-id/commit-id的头几个字符`
+
+  - 此时若要返回至version 4，则需要查看commit-id，可使用：`git reflog`，之后再使用reset指令即可。
+  - **所以这么看下来，很像是链表操作，HEAD即指针，可移动其切换版本。**
+
+### 2、场景二：与远程版本库进行交互
 
 
 
