@@ -173,11 +173,9 @@
 
 ## 三、Git的使用案例与心得
 
-### 1、在GitHub上创建工程
+### 1、场景一：在本地创建工程
 
-创建完毕，会得到git为结尾的仓库地址。在本地空间上将工程down下来，只需要命令：
-
-`git clone https://DOMAIN_NAME/YOUR_NAME/REPO_NAME.git`
+在工程目录里使用：`git init`，便可初始化一个版本库
 
 * 查看本地版本库的状态：
 
@@ -185,7 +183,7 @@
 
   ![image-20201005161230169](/Users/huth/Library/Application Support/typora-user-images/image-20201005161230169.png)
 
-  如图，可以看到当前本地版本库与remote的库的同步情况。
+  如图，可以看到当前本地版本库与remote的库的同步情况（remote操作后面再讲）。
 
 * 开始在本地添加工程文件：
 
