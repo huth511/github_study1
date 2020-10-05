@@ -197,7 +197,7 @@
 
 * 再提交到本地版本库（Repository）当中：
 
-  `git commit -m`
+  `git commit -m "add HomeWork/Git使用心得体会.md"`
 
 
 
