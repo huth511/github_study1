@@ -220,10 +220,38 @@
 
 1. 先将远程仓库拉取下来（fetch/clone 或 pull）
 
-   如果第一次，自然是fetch/clone。否则，需要和远程同步时，则先需要pull。
+   如果第一次，自然是fetch/clone。否则，需要和远程同步时，则先需要pull，可以使用`git pull [远程仓库名] [要拉取的分支]`
 
-   
-   
-   
+2. 再进行push
+
+* 如果直接push，冲突概率很大，因为在你编写代码的时候，同事提交它修改的代码，而你的写的和他的就可能有很大不同。所以要先pull，因为远程仓库里的东西，是一段时间后“达成的共识”，将它拉取下来基本没错，因为它是在比较过提交的各方的代码之后确定下来的暂时版本。拉取下来之后，也可能会有冲突，自己在本地进行修改，解决冲突部分，这样也不会因为直接提交到远程，导致远程的代码混乱，使得各个成员也失去了一个标准参照的版本。
+
+* push即是merge远程和本地两个不同的分支
+
+  ![](https://mmbiz.qpic.cn/mmbiz_png/iaf4356mqk5pOvZAOkj35GbXmDOayM0RwjYFryvQuspdleBuzRkCPqr9R4yPMywbicADQyZfSN21KleHYVkZic5ew/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+  注意：同一分支里的某个版本实际上是对上一个版本的增量补丁，即记录不同行对比的差异(line diff)。
+
+### 3、场景三：团队协作
+
+团队的每个成员都各自负责不同的某一个功能块，各占一个分支，各自在本地有一个仓库，有自己的master和branch，branch下可以有更多的branch，最后成员完成时，将自己的分支合并到自己的master，再提交到服务器端。
+
+- 合并的分类
+
+  #### (1) 快进式合并
+
+  这个在合并的时候会将分支和主线合并成一条时间线，如图：
+
+  <img src="/Users/huth/Library/Application Support/typora-user-images/image-20201017195342449.png" alt="image-20201017195342449" style="zoom:50%;" />
+
+  #### (2) 相对应的，要体现多条分支，须使用：`--no-ff`参数
+
+  <img src="/Users/huth/Library/Application Support/typora-user-images/image-20201017195552495.png" alt="image-20201017195552495" style="zoom:50%;" />
+
+  ​		比如：`git merge --no-ff mybranch`
+
+  - 
+
+
 
 https://blog.csdn.net/weixin_43606158/article/details/90729743
